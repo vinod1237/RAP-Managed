@@ -1,0 +1,21 @@
+managed implementation in class zbp_draft_i_view unique;
+strict ( 2 );
+
+with draft;
+define behavior for Ydraft_i_view //alias <alias_name>
+persistent table ybooksuppl_m
+draft table zybooksuppl_m_d
+lock master total etag LastChangedAt
+authorization master ( instance )
+etag master LastChangedAt
+{
+  draft action Discard;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Resume;
+  draft determine action Prepare;
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) TravelId, BookingId, BookingSupplementId;
+}

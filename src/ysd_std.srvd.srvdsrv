@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service def For Student'
+define service YSD_std {
+  expose Ystudent_P_hdr as Student;
+  expose Ystudent_P_att as Attachements;
+}

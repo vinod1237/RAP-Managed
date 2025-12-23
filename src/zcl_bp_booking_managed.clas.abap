@@ -1,0 +1,5 @@
+CLASS zcl_bp_booking_managed DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF yi_travel1_m.
+ENDCLASS.
+
+CLASS zcl_bp_booking_managed IMPLEMENTATION.
+ENDCLASS.

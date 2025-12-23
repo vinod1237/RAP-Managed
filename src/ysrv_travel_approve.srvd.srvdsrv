@@ -1,0 +1,5 @@
+@EndUserText.label: 'Approver Application'
+define service Ysrv_travel_approve {
+  expose YC_travel_approver1_m;
+  expose YC_booking_approver1_m;
+}

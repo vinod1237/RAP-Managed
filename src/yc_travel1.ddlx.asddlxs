@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI.headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travels',
+
+    title: {
+        type: #STANDARD,
+        label: 'Travel..',
+        value: 'TravelId'
+    }
+
+}
+annotate entity YC_travel1 with
+{
+  @UI.facet: [{
+              id: 'Travel',
+              purpose: #STANDARD,
+              position:10 ,
+              label: 'Travel_Details',
+              type:#IDENTIFICATION_REFERENCE
+                 },
+              {
+              id: 'Booking',
+              purpose: #STANDARD,
+              position:20 ,
+              label: 'Bookings',
+              type:#LINEITEM_REFERENCE,
+              targetElement: '_booking'
+                } ]
+  @UI.lineItem: [{ position: 10 },
+                 { type: #FOR_ACTION,dataAction: 'copytravel', label: 'Copy Travel' } ]
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.7
+  @UI.identification: [{ position: 10 }]
+  TravelId;
+  @UI: { lineItem: [{ position: 20 }],
+         selectionField: [{ position: 10 }],
+         identification: [{ position: 20 }]
+        }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: {
+                                           name: '/DMO/I_Agency',
+                                           element: 'AgencyID'
+                                       } }]
+  AgencyId;
+  //    Name;
+  @UI: { lineItem: [{ position: 30 }],
+         selectionField: [{ position:30 }],
+         identification: [{ position: 30 }]
+         }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: {
+                                           name: '/DMO/I_Customer',
+                                           element: 'CustomerID'
+                                       } }]
+  CustomerId;
+  //    LastName;
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  BeginDate;
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  EndDate;
+  @UI.identification: [{ position: 55 }]
+  BookingFee;
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60 }]
+  TotalPrice;
+  @Consumption.valueHelpDefinition: [{ entity: {
+                                           name: 'I_Currency',
+                                           element: 'Currency'
+                                       } }]
+  CurrencyCode;
+  @UI.identification: [{ position: 65 }]
+  Description;
+  @UI: { lineItem: [{ position: 70 }],
+         selectionField: [{ position: 40  }],
+         identification: [{ position: 70 }],
+         textArrangement: #TEXT_ONLY
+         }
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: {
+                                           name: '/DMO/I_Overall_Status_VH',
+                                           element: 'OverallStatus'
+                                       } }]
+  OverallStatus;
+  //    OverallStatusText;
+  @UI.hidden: true
+  LastChangedAt;
+
+
+}

@@ -1,0 +1,24 @@
+projection;
+strict ( 2 );
+
+define behavior for YC_travel_approver1_m //alias <alias_name>
+use etag
+{
+//  use create;
+  use update;
+//  use delete;
+
+  use action acceptTravel;
+  use action rejectTravel;
+//  use action copytravel;
+
+//  use association _booking { create; }
+}
+
+//define behavior for YC_booking_approver1_m //alias <alias_name>
+//{
+//  use update;
+//  use delete;
+//
+//  use association _travel;
+//}

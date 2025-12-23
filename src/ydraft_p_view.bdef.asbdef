@@ -1,0 +1,15 @@
+projection;
+strict ( 2 );
+use draft;
+define behavior for ydraft_p_view //alias <alias_name>
+use etag
+{
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Prepare;
+  use action Resume;
+  use create;
+  use update;
+  use delete;
+}

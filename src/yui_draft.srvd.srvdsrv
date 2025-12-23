@@ -1,0 +1,4 @@
+@EndUserText.label: 'draft srv'
+define service YUI_draft {
+  expose ydraft_p_view;
+}

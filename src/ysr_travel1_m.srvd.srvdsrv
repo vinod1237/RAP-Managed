@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition Managed'
+define service Ysr_travel1_m {
+  expose YC_travel1;
+  expose YC_booking1;
+  expose yC_booksuppl1;
+}
